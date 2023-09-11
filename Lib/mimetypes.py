@@ -144,7 +144,7 @@ class MimeTypes:
         base, ext = posixpath.splitext(url)
         
         # file path or url without extension
-        if ext is None:
+        if not ext:
             try:
                 ext = '.' + imghdr.what(url)
             except Exception:
